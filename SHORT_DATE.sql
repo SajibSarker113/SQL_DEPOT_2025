@@ -1,4 +1,4 @@
-SET LINES 84
+SET LINES 74
 SET PAGES 5000
 SET NUMFORMAT 999999.99
 
@@ -13,14 +13,10 @@ SELECT
     A.DIV_CD, B.CAT_CD,A.DIV_CD || B.CAT_CD,
     TO_CHAR(A.DIV_CD || B.CAT_CD || B.PRD_CD) AS DCP_CD, 
     INITCAP(SUBSTR(C.PROD_NM, 1, 25)) AS MEDICINE_NAME, 
-    NULL AS Blank_column, -- for creating a blank  row
+    ---NULL AS Blank_column, -- for creating a blank  row
     B.B_NO,  
-    SUM(B.RV_BAL) AS STK_QTY, 
-    TO_CHAR(B.EXP_DT,'DD.MM.YY') EXP_DT, 
-    SUM(B.RV_QTY) AS RV_QTY1
-    --SUM(B.RV_BAL / D.MST_PK) AS PETTY, 
-    --SUM(B.RV_QTY - B.RV_BAL) AS DIFF,
-    --A.ISS_FROM 
+    SUM(B.RV_BAL) AS STOK_QTY, 
+    TO_CHAR(B.EXP_DT,'DD.MM.YY') EXP_DT
 FROM 
     INV.FG_RV1 A, 
     INV.FG_RV2 B, 
@@ -48,10 +44,7 @@ GROUP BY
     C.PROD_NM, 
     B.B_NO, 
     B.RV_BAL,
-    B.EXP_DT, 
-    B.RV_QTY
-    --A.ISS_FROM 
---HAVING (B.RV_QTY - B.RV_BAL) > 0 
+    B.EXP_DT
 ORDER BY 
     A.DIV_CD, B.EXP_DT, A.DIV_CD || B.CAT_CD || B.PRD_CD 
 /
