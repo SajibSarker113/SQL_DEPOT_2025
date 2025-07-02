@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News_cal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #FDFDFD;
+        }
+
+        .calculator h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .display {
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .button {
+            width: 60px;
+            height: 40px;
+            font-size: 16px;
+            margin: 3px;
+        }
+
+        table {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <p><img src="E:\om.png" alt="aum" width="50" height="50" style="display: block; margin: 0 auto;"></p>
+
+    <div class="main-container">
+        <!-- First Column -->
+        <div class="column">
+            <ul>
+                <li><a href="https://www.prothomalo.com" target="_blank">Prothom Alo</a></li>
+                <li><a href="https://www.samakal.com" target="_blank">Samakal</a></li>
+                <li><a href="https://www.jugantor.com" target="_blank">Jugantor</a></li>
+                <li><a href="https://www.ittefaq.com.bd" target="_blank">Ittefaq</a></li>
+                <li><a href="https://www.bd-pratidin.com" target="_blank">Bd-protidin</a></li>
+                <li><a href="https://www.dailyjanakantha.com" target="_blank">Janakantha</a></li>
+                <li><a href="https://www.bonikbarta.com" target="_blank">Bonikbarta</a></li>
+            </ul>
+        </div>
+
+        <!-- Second Column -->
+        <div class="column">
+            <h2></h2>
+            <ul>
+                <li><a href="https://www.thedailystar.net" target="_blank">Daily Star</a></li>
+                <li><a href="https://www.newagebd.net" target="_blank">New age</a></li>
+                <li><a href="https://www.thefinancialexpress.com.bd" target="_blank">Financial Express</a></li>
+            </ul>
+        </div>
+        <!-- Third Column -->
+        <div class="column">
+            <h2></h2>
+            <ul>
+                <li><a href="https://www.nytimes.com/" target="_blank">Nytimes</a></li>
+                <li><a href="https://www.theguardian.com/" target="_blank">Gardian</a></li>
+                <li><a href="https://www.anandabazar.com" target="_blank">Anandabazar</a></li>
+                <li><a href="https://www.dawn.com/" target="_blank">Dawn</a></li>
+            </ul>
+        </div>
+
+        <!-- Forth Column with Calculator -->
+        <div class="column calculator">
+            <h2>Sajib's Calculator</h2>
+            <input type="text" id="screen" class="display" disabled>
+            <table>
+                <tr>
+                    <td><input type="button" value="√" class="button" onclick="document.getElementById('screen').value = Math.sqrt(document.getElementById('screen').value)"></td>
+                    <td><input type="button" value="CE" class="button" onclick="document.getElementById('screen').value = '' "></td>
+                    <td><input type="button" value="←" class="button" onclick="document.getElementById('screen').value = document.getElementById('screen').value.slice(0, -1)"></td>
+                    <td><input type="button" value="/" class="button" onclick="document.getElementById('screen').value += '/'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" class="button" onclick="document.getElementById('screen').value += '7'"></td>
+                    <td><input type="button" value="8" class="button" onclick="document.getElementById('screen').value += '8'"></td>
+                    <td><input type="button" value="9" class="button" onclick="document.getElementById('screen').value += '9'"></td>
+                    <td><input type="button" value="*" class="button" onclick="document.getElementById('screen').value += '*'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" class="button" onclick="document.getElementById('screen').value += '4'"></td>
+                    <td><input type="button" value="5" class="button" onclick="document.getElementById('screen').value += '5'"></td>
+                    <td><input type="button" value="6" class="button" onclick="document.getElementById('screen').value += '6'"></td>
+                    <td><input type="button" value="-" class="button" onclick="document.getElementById('screen').value += '-'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" class="button" onclick="document.getElementById('screen').value += '1'"></td>
+                    <td><input type="button" value="2" class="button" onclick="document.getElementById('screen').value += '2'"></td>
+                    <td><input type="button" value="3" class="button" onclick="document.getElementById('screen').value += '3'"></td>
+                    <td><input type="button" value="+" class="button" onclick="document.getElementById('screen').value += '+'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="0" class="button" onclick="document.getElementById('screen').value += '0'"></td>
+                    <td><input type="button" value="." class="button" onclick="document.getElementById('screen').value += '.'"></td>
+                    <td><input type="button" value="=" class="button" onclick="document.getElementById('screen').value = eval(document.getElementById('screen').value)"></td>
+                    <td><input type="button" value="C" class="button" onclick="document.getElementById('screen').value = '' "></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<p><img src="E:\om.png" alt="aum" width="50" height="50" style="display: block; margin: 0 auto;"></p>
+  <pre>
+ওঁ ভূর্ভুবঃ স্বঃ
+তৎসবিতুর্বরেণ্যং ।
+ভর্গো দেবস্য ধীমহি
+ধিয়ো য়ো নঃ প্রচোদয়াৎ।।
+(ঋগ্বেদ ৩/৬২/১০)
+
+অর্থাৎ ‘‘যিনি ত্রিলোক স্রষ্টা অর্থাৎ সমগ্র বিশ্ব জগতের প্রসবিতা, সেই সচ্চিদানন্দঘন পরব্রহ্মের বরণীয় জ্যোতিকে আমরা ধ্যান করি। তিনি আমাদের মন ও বুদ্ধিকে শুভ কার্যে প্রেরণা দান করুন।"
+
+ওঁ ত্র্যম্বকং যজামহে সুগন্ধিং পুষ্টিবর্ধনম্। 
+উর্বারুকমিব বন্ধনান্ মৃত্যোর্মুক্ষীয় মাঽমৃতাৎ।।
+(ঋগ্বেদ ৭/৫৯/১২)
+
+অর্থাৎ হে ত্রিনয়ন আমাদের জীবনকে সুগন্ধ ও পুষ্টিতে ভরিয়ে তোল। সকল বন্ধন থেকে মুক্তি দিয়ে আমাদের মৃত্যু হতে অমৃততে নিয়ে যাও।
+
+যজস্ব তন্বং সুজাত।
+(ঋগ্বেদ ১০/৭/৬)
+
+অর্থাৎ হে পরমেশ্বর! আমাকে বিবিধ জ্ঞান দ্বারা সমৃদ্ধ করো।
+
+শ্রেয়ান্ স্বধর্মো বিগুণঃ পরধর্মাৎ স্বনুষ্ঠিতাৎ৷ 
+স্বধর্মে নিধনং শ্রেয়ঃ পরধর্মো ভয়াবহঃ৷৷
+(শ্রীমদ্ভগবদগীতা: ৩/৩৫)
+
+অর্থাৎ নিজ ধর্মের অনুষ্ঠান দোষযুক্ত হলেও উত্তমরূপে অনুষ্ঠিত আপাত দৃশ্যমান পরধর্ম থেকে সর্বশ্রেষ্ঠ। তাই নিজধর্ম সাধনে যদি মৃত্যুও হয়, তবেও 
+সে ধর্ম কল্যাণকর ; কিন্তু পক্ষান্তরে পরধর্ম ভয়াবহ।
+
+অসতো মা সদ্‌গময়,
+তমসো মা জ্যোতির্গময়,
+মৃত্যোর্মামৃতং গময়।৷
+(বৃহদারণ্যক উপনিষদ ১।৩।২৮)
+
+অর্থাৎ অসৎ হতে সৎস্বরৃপে নিয়ে যাও, অন্ধকার হতে আলোয় নিয়ে  যাও, মৃত্যু হতে  আমাকে অমৃতে নিয়ে  যাও।
+
+সর্বে ভবন্তু সুখিনঃ 
+সর্বে সন্তু নিরাময়াঃ। 
+সর্বে ভদ্রাণি পশ্যন্ত 
+মা কশ্চিদ্ দুঃখভাগ্ ভবেৎ ৷৷
+
+
+অর্থাৎ সকলে সুখী হউক, সকলে নিরাময় হউক, সকলের মঙ্গল হউক, কেহ কখন যেন দুঃখ না পায়।
+
+‘‘আমাকে সেই শক্তি দাও যা বদল করতে পারবো না, তা যেন মেনে নিতে পারি এবং যা বদল করতে পারি তা করার সাহস দাও।’’
+  </pre>
+
+<p><img src="E:\Morning_Miracle.jpg" alt="aum" width="1100" height="250" style="display: block; margin: 0 auto;"></p>
+
+
+ <pre>
+Depot Name	Code	Cash Limit	MRC LIMIT
+Barisal	806	80 k	950
+Bogra	802	90 k	900
+Brahmanbaria	816	90 k	900
+Chandpur	815	70 k	900
+Comilla	811	80 k	1000
+Naogaon	832	70 k	900
+Narshingdi	831	70 k	950
+North Dhaka	829	100k	1050
+Patuakhali	839	70 k	950
+Savar	826	80 k	950
+Central	821	100k	
+Dinajpur 	828	80 k	900
+Faridpur 	825	81 k	900
+Feni 	837	82 k	900
+Jashore 	804	83 k	900
+Khulna 	805	84 k	950
+Kushtia 	840	70 k	900
+Maijdee 	813	71 k	900
+Rangpur 	801	90 k	900
+South Dhaka	809	100 k	950
+Chakoria 	814	70 k	950
+Chattogram 	812	100 k	900
+Moulvibazar 	838	70 k	950
+Mymensingh 	807	90 k	900
+Narayangonj 	827	100 k	950
+Pabna 	836	80 k	900
+Rajshahi 	803	80 k	900
+Sylhet 	810	80 k	1000
+Tangail 	835	80 k	950
+ </pre>
+
+
+
+<p><img src="E:\om.png" alt="aum" width="50" height="50" style="display: block; margin: 0 auto;"></p>
+
+    <div class="main-container">
+        <!-- First Column -->
+        <div class="column">
+            <ul>
+                <li><a href="https://www.prothomalo.com" target="_blank">Prothom Alo</a></li>
+                <li><a href="https://www.samakal.com" target="_blank">Samakal</a></li>
+                <li><a href="https://www.jugantor.com" target="_blank">Jugantor</a></li>
+                <li><a href="https://www.ittefaq.com.bd" target="_blank">Ittefaq</a></li>
+                <li><a href="https://www.bd-pratidin.com" target="_blank">Bd-protidin</a></li>
+                <li><a href="https://www.dailyjanakantha.com" target="_blank">Janakantha</a></li>
+                <li><a href="https://www.bonikbarta.com" target="_blank">Bonikbarta</a></li>
+            </ul>
+        </div>
+
+        <!-- Second Column -->
+        <div class="column">
+            <h2></h2>
+            <ul>
+                <li><a href="https://www.thedailystar.net" target="_blank">Daily Star</a></li>
+                <li><a href="https://www.newagebd.net" target="_blank">New age</a></li>
+                <li><a href="https://www.thefinancialexpress.com.bd" target="_blank">Financial Express</a></li>
+            </ul>
+        </div>
+        <!-- Third Column -->
+        <div class="column">
+            <h2></h2>
+            <ul>
+                <li><a href="https://www.nytimes.com/" target="_blank">Nytimes</a></li>
+                <li><a href="https://www.theguardian.com/" target="_blank">Gardian</a></li>
+                <li><a href="https://www.anandabazar.com" target="_blank">Anandabazar</a></li>
+                <li><a href="https://www.dawn.com/" target="_blank">Dawn</a></li>
+            </ul>
+        </div>
+
+        <!-- Third Column -->
+        <div class="column">
+            <h2></h2>
+            <ul>
+                <li><a href="https://www.nytimes.com/" target="_blank">Nytimes</a></li>
+                <li><a href="https://www.theguardian.com/" target="_blank">Gardian</a></li>
+                <li><a href="https://www.anandabazar.com" target="_blank">Anandabazar</a></li>
+                <li><a href="https://www.dawn.com/" target="_blank">Dawn</a></li>
+            </ul>
+        </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
