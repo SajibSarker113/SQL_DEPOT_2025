@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News & Live Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f9;
+    }
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .column {
+      flex: 1;
+      min-width: 250px;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #FDFDFD;
+    }
+    .calculator h2 {
+      text-align: center;
+    }
+    .display {
+      width: 100%;
+      height: 40px;
+      font-size: 18px;
+      text-align: right;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .button {
+      width: 60px;
+      height: 40px;
+      font-size: 16px;
+      margin: 3px;
+    }
+    table {
+      margin: auto;
+    }
+    .calendar {
+      width: 100%;
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .calendar-header h2 {
+      margin: 0;
+    }
+    .calendar-body {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+    }
+    .day-name, .day {
+      text-align: center;
+      padding: 0.5rem;
+    }
+    .day-name {
+      font-weight: bold;
+      color: #666;
+    }
+    .day {
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .day:hover {
+      background-color: #eee;
+    }
+    .today {
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+    }
+    .controls button {
+      padding: 0.25rem 0.75rem;
+      font-size: 1rem;
+      background: #ddd;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+ 	<p><img src="E:/om.png" alt="aum" width="50" height="50" style="display: block; margin: 0 auto;"></p>
+	<p style="text-align: center;">ॐ नमो भगवते वासुदेवाय .</p>
+
+  <div class="main-container">
+    <div class="column">
+      <ul>
+        <li><a href="https://www.prothomalo.com" target="_blank">Prothom Alo</a></li>
+        <li><a href="https://www.samakal.com" target="_blank">Samakal</a></li>
+        <li><a href="https://www.kalerkantho.com" target="_blank">Kalerkantho</a></li>
+        <li><a href="https://www.kalbela.com" target="_blank">Kalbela</a></li>
+        <li><a href="https://www.jugantor.com" target="_blank">Jugantor</a></li>
+        <li><a href="https://www.ittefaq.com.bd" target="_blank">Ittefaq</a></li>
+        <li><a href="https://www.bd-pratidin.com" target="_blank">Bd-protidin</a></li>
+        <li><a href="https://www.dailyjanakantha.com" target="_blank">Janakantha</a></li>
+        <li><a href="https://www.bonikbarta.com" target="_blank">Bonikbarta</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <ul>
+        <li><a href="https://www.thedailystar.net" target="_blank">Daily Star</a></li>
+        <li><a href="https://www.newagebd.net" target="_blank">New Age</a></li>
+        <li><a href="https://thefinancialexpress.com.bd" target="_blank">Financial Express</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <ul>
+        <li><a href="https://www.nytimes.com/" target="_blank">Nytimes</a></li>
+        <li><a href="https://www.theguardian.com/" target="_blank">Guardian</a></li>
+        <li><a href="https://www.anandabazar.com" target="_blank">Anandabazar</a></li>
+        <li><a href="https://bangla.hindustantimes.com" target="_blank">Anandabazar</a></li>
+        <li><a href="https://www.dawn.com/" target="_blank">Dawn</a></li>
+      </ul>
+    </div>
+    <div class="column calculator">
+      <h2>Sajib's Calculator</h2>
+      <input type="text" id="screen" class="display" disabled>
+      <table>
+        <tr>
+          <td><input type="button" value="√" class="button" onclick="calculate('sqrt')"></td>
+          <td><input type="button" value="CE" class="button" onclick="clearScreen()"></td>
+          <td><input type="button" value="←" class="button" onclick="backspace()"></td>
+          <td><input type="button" value="/" class="button" onclick="appendValue('/')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" class="button" onclick="appendValue('7')"></td>
+          <td><input type="button" value="8" class="button" onclick="appendValue('8')"></td>
+          <td><input type="button" value="9" class="button" onclick="appendValue('9')"></td>
+          <td><input type="button" value="*" class="button" onclick="appendValue('*')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" class="button" onclick="appendValue('4')"></td>
+          <td><input type="button" value="5" class="button" onclick="appendValue('5')"></td>
+          <td><input type="button" value="6" class="button" onclick="appendValue('6')"></td>
+          <td><input type="button" value="-" class="button" onclick="appendValue('-')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="1" class="button" onclick="appendValue('1')"></td>
+          <td><input type="button" value="2" class="button" onclick="appendValue('2')"></td>
+          <td><input type="button" value="3" class="button" onclick="appendValue('3')"></td>
+          <td><input type="button" value="+" class="button" onclick="appendValue('+')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="0" class="button" onclick="appendValue('0')"></td>
+          <td><input type="button" value="." class="button" onclick="appendValue('.')"></td>
+          <td><input type="button" value="=" class="button" onclick="calculate('=')"></td>
+          <td><input type="button" value="C" class="button" onclick="clearScreen()"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="calendar">
+    <div class="calendar-header">
+      <button id="prev">&#8592;</button>
+      <h2 id="month-year"></h2>
+      <button id="next">&#8594;</button>
+    </div>
+    <div class="calendar-body" id="calendar-days">
+      <div class="day-name">Sun</div>
+      <div class="day-name">Mon</div>
+      <div class="day-name">Tue</div>
+      <div class="day-name">Wed</div>
+      <div class="day-name">Thu</div>
+      <div class="day-name">Fri</div>
+      <div class="day-name">Sat</div>
+    </div>
+  </div>
+
+  <script>
+    const screen = document.getElementById('screen');
+
+    function appendValue(val) {
+      screen.value += val;
+    }
+
+    function clearScreen() {
+      screen.value = '';
+    }
+
+    function backspace() {
+      screen.value = screen.value.slice(0, -1);
+    }
+
+    function calculate(action) {
+      if (action === 'sqrt') {
+        screen.value = Math.sqrt(screen.value);
+      } else {
+        try {
+          screen.value = eval(screen.value);
+        } catch {
+          screen.value = 'Error';
+        }
+      }
+    }
+
+    const monthYear = document.getElementById('month-year');
+    const calendarDays = document.getElementById('calendar-days');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+
+    function renderCalendar(month, year) {
+      const firstDay = new Date(year, month, 1).getDay();
+      const totalDays = new Date(year, month + 1, 0).getDate();
+      monthYear.textContent = `${today.toLocaleString('default', { month: 'long' })} ${year}`;
+      calendarDays.innerHTML = `
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+      `;
+      for (let i = 0; i < firstDay; i++) {
+        calendarDays.innerHTML += '<div></div>';
+      }
+      for (let day = 1; day <= totalDays; day++) {
+        const date = new Date(year, month, day);
+        const isToday = date.toDateString() === new Date().toDateString();
+        calendarDays.innerHTML += `<div class="day ${isToday ? 'today' : ''}">${day}</div>`;
+      }
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      today = new Date(currentYear, currentMonth);
+      renderCalendar(currentMonth, currentYear);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      today = new Date(currentYear, currentMonth);
+      renderCalendar(currentMonth, currentYear);
+    });
+
+    renderCalendar(currentMonth, currentYear);
+  </script>
+
+
+<video src="E:\AI_Snow_Hill.mp4" controls style="display: block; margin-left: auto; margin-right: auto; width: 640px; height: 360px;">  <br> </video>
+<br>
+
+
+<div style="text-align: center;">
+    <div style="color: Tomato;"><b>ওঁ ভূর্ভুবঃ স্বঃ<br>তৎসবিতুর্বরেণ্যং ।<br>ভর্গো দেবস্য ধীমহি<br>ধিয়ো য়ো নঃ প্রচোদয়াৎ।।</b><br></div>
+(ঋগ্বেদ ৩/৬২/১০)<br>অর্থাৎ যিনি ত্রিলোক স্রষ্টা অর্থাৎ সমগ্র বিশ্ব জগতের প্রসবিতা, সেই সচ্চিদানন্দঘন পরব্রহ্মের বরণীয় জ্যোতিকে আমরা ধ্যান করি। তিনি আমাদের মন ও বুদ্ধিকে শুভ কার্যে প্রেরণা দান করুন।<br>
+    <div style="color: Tomato;"><b>ওঁ ত্র্যম্বকং যজামহে সুগন্ধিং পুষ্টিবর্ধনম্।<br>উর্বারুকমিব বন্ধনান্ মৃত্যোর্মুক্ষীয় মাঽমৃতাৎ।।</b><br></div>
+(ঋগ্বেদ ৭/৫৯/১২)<br>অর্থাৎ হে ত্রিনয়ন আমাদের জীবনকে সুগন্ধ ও পুষ্টিতে ভরিয়ে তোল। সকল বন্ধন থেকে মুক্তি দিয়ে আমাদের মৃত্যু হতে অমৃততে নিয়ে যাও।<br>
+    <div style="color: Tomato;"><b>শ্রেয়ান্ স্বধর্মো বিগুণঃ পরধর্মাৎ স্বনুষ্ঠিতাৎ৷<br>স্বধর্মে নিধনং শ্রেয়ঃ পরধর্মো ভয়াবহঃ৷৷</b><br></div>
+(শ্রীমদ্ভগবদগীতা: ৩/৩৫)<br>অর্থাৎ নিজ ধর্মের অনুষ্ঠান দোষযুক্ত হলেও উত্তমরূপে অনুষ্ঠিত আপাত দৃশ্যমান পরধর্ম থেকে সর্বশ্রেষ্ঠ। তাই নিজধর্ম সাধনে যদি মৃত্যুও হয়, তবেও সে ধর্ম কল্যাণকর ; কিন্তু পক্ষান্তরে পরধর্ম ভয়াবহ।<br>
+    <div style="color: Tomato;"><b>অসতো মা সদ্‌গময়,<br>তমসো মা জ্যোতির্গময়,<br>মৃত্যোর্মামৃতং গময়।৷</b><br></div>
+(বৃহদারণ্যক উপনিষদ ১।৩।২৮)<br>অর্থাৎ অসৎ হতে সৎস্বরৃপে নিয়ে যাও, অন্ধকার হতে আলোয় নিয়ে  যাও, মৃত্যু হতে  আমাকে অমৃতে নিয়ে  যাও।<br>
+    <div style="color: Tomato;"><b>সর্বে ভবন্তু সুখিনঃ<br>সর্বে সন্তু নিরাময়াঃ।<br>সর্বে ভদ্রাণি পশ্যন্ত<br>মা কশ্চিদ্ দুঃখভাগ্ ভবেৎ ৷৷</b></div>
+অর্থাৎ সকলে সুখী হউক, সকলে নিরাময় হউক, সকলের মঙ্গল হউক, কেহ কখন যেন দুঃখ না পায়।<br>
+    <div style="color: Tomato;">‘‘আমাকে সেই শক্তি দাও যা বদল করতে পারবো না, তা যেন মেনে নিতে পারি এবং যা বদল করতে পারি তা করার সাহস দাও।’’</div>
+</div>
+
+
+<br>
+
+<p><img src="E:\Morning_Miracle.jpg" alt="aum" width="1100" height="250" style="display: block; margin: 0 auto;"></p>
+
+
+ <pre>
+Depot Name	Code	Cash Limit	MRC LIMIT
+Barisal	806	80 k	950
+Bogra	802	90 k	900
+Brahmanbaria	816	90 k	900
+Chandpur	815	70 k	900
+Comilla	811	80 k	1000
+Naogaon	832	70 k	900
+Narshingdi	831	70 k	950
+North Dhaka	829	100k	1050
+Patuakhali	839	70 k	950
+Savar	826	80 k	950
+Central	821	100k	
+Dinajpur 	828	80 k	900
+Faridpur 	825	81 k	900
+Feni 	837	82 k	900
+Jashore 	804	83 k	900
+Khulna 	805	84 k	950
+Kushtia 	840	70 k	900
+Maijdee 	813	71 k	900
+Rangpur 	801	90 k	900
+South Dhaka	809	100 k	950
+Chakoria 	814	70 k	950
+Chattogram 	812	100 k	900
+Moulvibazar 	838	70 k	950
+Mymensingh 	807	90 k	900
+Narayangonj 	827	100 k	950
+Pabna 	836	80 k	900
+Rajshahi 	803	80 k	900
+Sylhet 	810	80 k	1000
+Tangail 	835	80 k	950
+ </pre>
+
+
+
+<p><img src="E:\om.png" alt="aum" width="50" height="50" style="display: block; margin: 0 auto;"></p>
+
+
+</body>
+</html>
